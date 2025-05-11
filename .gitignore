@@ -1,18 +1,28 @@
-# Node modules
-node_modules/
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
 
-# Python venv
+# Virtual environment
 venv/
+env/
 
-# VSCode settings
-.vscode/
+# Node modules
+**/node_modules/
 
-# OS stuff
-.DS_Store
-Thumbs.db
+# Build output
+dist/
+build/
 
 # Logs
 *.log
 
-# ENV files
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# IDE-specific
+.vscode/
+
+# dotenv
 .env

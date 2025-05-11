@@ -1,0 +1,236 @@
+body {
+  margin: 0;
+  font-family: 'Lora', serif;
+  background-color: #f5f0e6;
+  color: #3a2c1e;
+  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+  background-repeat: repeat;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.header-bubble {
+  background: #fffaf2;
+  border-radius: 20px;
+  padding: 2rem;
+  border: 2px solid #c0b283;
+  box-shadow: 0 6px 16px rgba(61, 45, 36, 0.25);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.header-bubble h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 2.5rem;
+  color: #2f1b0c;
+  margin-bottom: 0.5rem;
+}
+
+.caption {
+  font-size: 1.1rem;
+  color: #5a4a3c;
+  font-style: italic;
+}
+
+.action-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.gradient-button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-family: 'Cinzel', serif;
+  background: linear-gradient(135deg, #7b5e57, #3f2b2b);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(61, 45, 36, 0.2);
+}
+
+.gradient-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(61, 45, 36, 0.3);
+}
+
+.quote-display {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.left-panel, .right-panel {
+  flex: 1;
+  min-width: 300px;
+}
+
+.quote-box {
+  background: #fffaf2;
+  border-left: 6px solid #7b5e57;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(61, 45, 36, 0.1);
+  position: relative;
+}
+
+.quote-text {
+  font-size: 1.5rem;
+  line-height: 1.1;
+  color: #3a2c1e;
+  quotes: "“" "”";
+  font-family: "EB Garamond", serif; /* Example font */
+  font-style: italic;
+}
+
+.quote-text::before {
+  content: open-quote;
+  font-size: 2rem;
+  vertical-align: top;
+  color: #7b5e57;
+}
+
+.quote-text::after {
+  content: close-quote;
+  font-size: 2rem;
+  vertical-align: bottom;
+  color: #7b5e57;
+}
+
+.philosopher-text {
+  font-weight: bold;
+  color: #7b5e57;
+  margin-top: 1rem;
+  text-align: right;
+}
+
+/* Button for showing philosopher details */
+.who-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-family: 'Cinzel', serif;
+  background: #3f2b2b;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: background 0.3s ease;
+}
+
+.who-button:hover {
+  background: #5a403a;
+}
+
+.info-card {
+  background: #fffaf2;
+  padding: 1.5rem;
+  border-radius: 15px;
+  text-align: center;
+  border: 2px solid #c0b283;
+  box-shadow: 0 4px 12px rgba(61, 45, 36, 0.15);
+}
+
+.philosopher-img {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  filter: sepia(40%);
+}
+
+.fun-fact {
+  font-size: 0.9rem;
+  color: #3a2c1e;
+}
+
+.select-time-container {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.select-time-button {
+  background: #7b5e57;
+  border: 1px solid #bcb8b830;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
+}
+
+.select-time-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #5a4a3c;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(130, 129, 129, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.mood-modal {
+  background: rgba(30, 30, 30, 0.95);
+  border-radius: 20px;
+  padding: 1.5rem 2rem;
+  width: 280px;
+  color: white;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  backdrop-filter: blur(8px);
+}
+
+.mood-modal h3 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.mood-options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mood-options li {
+  padding: 8px 0;
+  border-bottom: 1px solid #ffffff20;
+  cursor: pointer;
+}
+
+.mood-options li:hover {
+  color: #ffd369;
+}
+
+.close-button {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+.error-text {
+  color: darkred;
+  font-weight: bold;
+  margin-top: 1rem;
+}
