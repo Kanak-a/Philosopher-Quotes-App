@@ -1,0 +1,18 @@
+# Node modules
+node_modules/
+
+# Python venv
+venv/
+
+# VSCode settings
+.vscode/
+
+# OS stuff
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# ENV files
+.env
