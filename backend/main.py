@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from database import engine, Base
 from pydantic import BaseModel
+import google.generativeai as genai
 import routes
 import random
 import psycopg2
@@ -19,7 +20,8 @@ app.include_router(routes.router)
 class QuoteInput(BaseModel):
     quote: str
     philosopher: str
-    theme: str
+    mood: str
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -56,17 +58,41 @@ def get_philosophers():
 
 @app.post("/explain")
 async def explain_quote(data: QuoteInput):
-    #now we have access to the data
-    quote = data.quote
-    philosopher = data.philosopher
-    theme = data.theme
+    try:
+        quote = data.quote
+        philosopher = data.philosopher
+        mood = data.mood
 
-    # Create the prompt 
-    # Create your prompt to send to the LLM (placeholder logic for now)
-    prompt = f"Explain the quote '{quote}' by {philosopher} in a {mood} and magical way."
+        prompt = f"""
+        You are a philosophical guide presenting timeless wisdom in a clear and supportive way.
 
-    # (Optional) Here you can call an LLM or generate a dummy explanation for now
-    explanation = f"(MAGICAL) {philosopher} might say: {quote} — Reflecting {mood.lower()} curiosity."
+        Quote: "{quote}"
+        Philosopher: {philosopher}
+        Mood: {mood}
 
-    # Return explanation back to frontend
+        Your task is to explain the deeper meaning of this quote based on the selected mood. Keep the explanation short, emotionally grounding, and easy to understand—no storytelling or dialogue. Present the core message as if giving guidance to someone looking for clarity or personal growth.
+
+        Make sure to:
+        - Reflect the philosopher's core beliefs
+        - Keep paragraphs short and simple
+        - Use bullet points if helpful
+        - Include relatable modern-day examples if needed
+        - Focus on actionable or insightful life lessons
+
+        Write like a wise teacher, not a poet. Aim to help the reader learn and apply the idea.
+        """
+
+
+
+        # Example API call (replace with actual LLM API call)
+        genai.configure(api_key = "AIzaSyBOcrrFAaupmPT-YS1HkJEUj-IAEgwyR4E")
+        model = genai.GenerativeModel("gemini-1.5-flash") 
+        
+        response = model.generate_content(prompt)
+        explanation = response.text
+
+    except Exception as e:
+        explanation = f"Error generating explanation: {str(e)}"
+
     return {"explanation": explanation}
+
