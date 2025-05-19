@@ -1,236 +1,257 @@
-body {
-  margin: 0;
-  font-family: 'Lora', serif;
-  background-color: #f5f0e6;
-  color: #3a2c1e;
-  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-  background-repeat: repeat;
-}
-
-.app-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-.header-bubble {
-  background: #fffaf2;
-  border-radius: 20px;
-  padding: 2rem;
-  border: 2px solid #c0b283;
-  box-shadow: 0 6px 16px rgba(61, 45, 36, 0.25);
-  text-align: center;
-  margin-bottom: 2rem;
-}
-.header-bubble h1 {
-  font-family: 'Cinzel', serif;
-  font-size: 2.5rem;
-  color: #2f1b0c;
-  margin-bottom: 0.5rem;
-}
-
-.caption {
-  font-size: 1.1rem;
-  color: #5a4a3c;
-  font-style: italic;
-}
-
-.action-section {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.gradient-button {
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
-  font-family: 'Cinzel', serif;
-  background: linear-gradient(135deg, #7b5e57, #3f2b2b);
-  color: white;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(61, 45, 36, 0.2);
-}
-
-.gradient-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 24px rgba(61, 45, 36, 0.3);
-}
-
-.quote-display {
+/* Root & fonts */
+body, html, #root, .app-container {
+  margin: 0; padding: 0; height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f7f6f2; /* soft beige */
+  color: #444444;
   display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.left-panel, .right-panel {
-  flex: 1;
-  min-width: 300px;
+.header {
+  margin-top: 3.5rem;
+  text-align: center;
 }
 
-.quote-box {
-  background: #fffaf2;
-  border-left: 6px solid #7b5e57;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(61, 45, 36, 0.1);
-  position: relative;
+.title {
+  font-weight: 700;
+  font-size: 2.6rem;
+  color: #4a443d; /* bark brown */
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.subtitle {
+  margin-top: 0.5rem;
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: #7a7465; /* olive gray */
+  font-style: italic;
+  letter-spacing: 0.03em;
+  font-family: 'Georgia', serif;
+}
+/* Main content */
+.main-content {
+  margin: 2.5rem auto;
+  width: 90%;
+  max-width: 720px;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* Quote */
+.quote-display {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(74, 68, 61, 0.1);
+  padding: 2.5rem 3rem;
+  margin-bottom: 2rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.quote-display:hover {
+  box-shadow: 0 14px 40px rgba(74, 68, 61, 0.15);
 }
 
 .quote-text {
-  font-size: 1.5rem;
-  line-height: 1.1;
-  color: #3a2c1e;
-  quotes: "“" "”";
-  font-family: "EB Garamond", serif; /* Example font */
-  font-style: italic;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #4a443d;
+  margin-bottom: 1.3rem;
+  letter-spacing: 0.02em;
+  font-family: 'Merriweather', serif;
 }
 
-.quote-text::before {
-  content: open-quote;
-  font-size: 2rem;
-  vertical-align: top;
-  color: #7b5e57;
+.philosopher-name {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #7a7465;
+  letter-spacing: 0.04em;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.quote-text::after {
-  content: close-quote;
-  font-size: 2rem;
-  vertical-align: bottom;
-  color: #7b5e57;
-}
-
-.philosopher-text {
-  font-weight: bold;
-  color: #7b5e57;
-  margin-top: 1rem;
-  text-align: right;
-}
-
-/* Button for showing philosopher details */
-.who-button {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-family: 'Cinzel', serif;
-  background: #3f2b2b;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  margin-bottom: 1rem;
-  transition: background 0.3s ease;
-}
-
-.who-button:hover {
-  background: #5a403a;
-}
-
-.info-card {
-  background: #fffaf2;
-  padding: 1.5rem;
-  border-radius: 15px;
-  text-align: center;
-  border: 2px solid #c0b283;
-  box-shadow: 0 4px 12px rgba(61, 45, 36, 0.15);
-}
-
-.philosopher-img {
-  width: 100%;
-  max-width: 200px;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-  filter: sepia(40%);
-}
-
-.fun-fact {
-  font-size: 0.9rem;
-  color: #3a2c1e;
-}
-
-.select-time-container {
-  text-align: center;
-  margin-top: 1rem;
-}
-
-.select-time-button {
-  background: #7b5e57;
-  border: 1px solid #bcb8b830;
-  color: white;
-  padding: 15px 20px;
-  border-radius: 30px;
-  cursor: pointer;
-  font-family: 'Cinzel', serif;
-  backdrop-filter: blur(4px);
-  transition: all 0.3s ease;
-}
-
-.select-time-button:hover {
-  background: rgba(255, 255, 255, 0.2);
-  color: #5a4a3c;
-}
-
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(130, 129, 129, 0.4);
+/* Philosopher info */
+.philosopher-info {
+  margin-bottom: 2.5rem;
   display: flex;
   align-items: center;
+  gap: 1.8rem;
+  background: #f8f6f1;
+  border-radius: 12px;
+  padding: 1.2rem 1.8rem;
+  box-shadow: inset 0 0 8px #d3cdbf;
+}
+
+.philosopher-image {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2.5px solid #d3cdbf;
+  transition: transform 0.3s ease;
+}
+.philosopher-image:hover {
+  transform: scale(1.05);
+}
+.philosopher-intro {
+  font-size: 1.05rem;
+  color: #5f594b;
+  font-weight: 400;
+  flex: 1;
+  line-height: 1.5;
+  font-family: 'Georgia', serif;
+}
+
+/* Explanation */
+.explanation-section {
+  background: #fff9e6; /* soft warm cream */
+  border-radius: 14px;
+  padding: 1.8rem 2.2rem;
+  margin-bottom: 2.5rem;
+  color: #5e553f;
+  box-shadow: 0 6px 16px rgba(94, 85, 63, 0.2);
+  font-family: 'Merriweather', serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.explanation-text {
+  color: #3e3a2e;
+  max-width: 600px;
+  margin: 0 auto 1.2rem;
+  letter-spacing: 0.015em;
+}
+
+
+/* Buttons */
+.btn-secondary {
+  background: #7a7465;
+  color: #f7f6f2;
+  padding: 0.65rem 1.4rem;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  margin-bottom: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  box-shadow: 0 3px 8px rgba(122, 116, 101, 0.4);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background: #605945;
+  outline: none;
+  box-shadow: 0 6px 14px rgba(74, 68, 61, 0.6);
+}
+
+/* Error */
+.error-message {
+  color: #b74646;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Mood Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(74, 68, 61, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
   justify-content: center;
-  z-index: 1000;
+  align-items: center;
+  padding: 1.25rem;
+  z-index: 10;
 }
 
 .mood-modal {
-  background: rgba(30, 30, 30, 0.95);
-  border-radius: 20px;
-  padding: 1.5rem 2rem;
-  width: 280px;
-  color: white;
-  position: relative;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-  backdrop-filter: blur(8px);
-}
-
-.mood-modal h3 {
-  margin-bottom: 1rem;
-  font-size: 1.4rem;
+  background: #f7f6f2;
+  padding: 2rem 2.5rem;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(96, 89, 69, 0.4);
+  max-width: 460px;
+  width: 100%;
   text-align: center;
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  color: #4a443d
 }
 
-.mood-options {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.mood-options li {
-  padding: 8px 0;
-  border-bottom: 1px solid #ffffff20;
-  cursor: pointer;
-}
-
-.mood-options li:hover {
-  color: #ffd369;
-}
-
-.close-button {
+.close-btn {
   position: absolute;
-  right: 12px;
-  top: 10px;
-  background: none;
+  top: 15px;
+  right: 15px;
+  background: transparent;
   border: none;
-  font-size: 1.3rem;
-  color: #fff;
+  font-size: 1.8rem;
+  color: #7a7465;
   cursor: pointer;
+  transition: color 0.3s ease;
 }
 
+.close-btn:hover,
+.close-btn:focus {
+  color: #4a443d;
+  outline: none;
+}
 
-.error-text {
-  color: darkred;
-  font-weight: bold;
-  margin-top: 1rem;
+/* Mood buttons container */
+.mood-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 1.5rem;
+}
+
+/* Mood buttons themselves */
+.mood-btn {
+  background: #7a7465;
+  border: none;
+  border-radius: 30px;
+  padding: 0.65rem 1.4rem;
+  font-weight: 600;
+  color: #f4f1ea;
+  cursor: pointer;
+  font-size: 1.1rem;
+  min-width: 110px;
+  transition: background-color 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  user-select: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.mood-btn:hover,
+.mood-btn:focus {
+  background: #4a443d;
+  outline: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.mood-btn:active {
+  transform: scale(0.97);
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .mood-buttons {
+    gap: 10px;
+  }
+
+  .mood-btn {
+    min-width: 90px;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
 }
