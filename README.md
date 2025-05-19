@@ -9,9 +9,9 @@
 ![Mood Selection Modal](assets/Mood-Chooser.png)  
 *Choose your mood to get inspired.*
 
-![Quote Display](assets/Homepage.png)
+![Quote Display](assets/Full-homepage.png)
 
-![Explanation from LLM's](assets/Explanation.png)  
+![Explanation from LLM's](assets/Explanation-full.png)  
 *Philosophy quote and explanation based on your selected mood.*
 
 ---
